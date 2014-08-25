@@ -25,19 +25,16 @@ public class Label extends GuiElement{
 	public void render(Graphics2D g){
 		g.setColor(color);
 		
-		int width = Variables.fmDefault.stringWidth(text);
-		int height = Variables.fmDefault.getHeight();
-		
 		if(hasBackground){
 			g.setColor(bgcolor);
-			g.fillRect((int)location.getX(), (int)location.getY(), width, height);
+			g.fillRect((int)location.getX(), (int)location.getY(), getWidth(), getHeight());
 			g.setColor(color);
 		}
 		
 		if(hasBorder){
 			g.setColor(borderColor);
 			for(int i = 0; i < borderWidth; i++){
-				g.drawRect((int)location.getX() - i, (int)location.getY() - i, width + 2 * i, height + 2 * i);
+				g.drawRect((int)location.getX() + i, (int)location.getY() + i, getWidth() - 2 * i, getHeight() - 2 * i);
 			}
 		}
 		
@@ -45,7 +42,7 @@ public class Label extends GuiElement{
 			g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
 		}
 		
-		g.drawString(text, (int)location.getX(), (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3));
+		g.drawString(text, (int)location.getX() + borderWidth + 2, (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3) + borderWidth);
 	}
 	
 	public Label(String text, Point location){
@@ -62,6 +59,14 @@ public class Label extends GuiElement{
 		Point location = new Point();
 		location.setLocation(x, y);
 		init(text, location);
+	}
+	
+	public int getWidth(){
+		return Variables.fmDefault.stringWidth(text) + 2 * borderWidth + 4;
+	}
+	
+	public int getHeight(){
+		return Variables.fmDefault.getHeight() + 2 * borderWidth;
 	}
 	
 	public String getText() {
