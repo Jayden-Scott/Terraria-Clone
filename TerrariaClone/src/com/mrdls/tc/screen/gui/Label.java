@@ -24,10 +24,13 @@ public class Label extends GuiElement{
 	public void render(Graphics2D g){
 		g.setColor(getStyle().getColor());
 		
-		if(getStyle().isHasBackground()){
-			g.setColor(getStyle().getBgcolor());
+		if(getStyle().isHasBackground() || (hovering && style.isHasMObgColor())){
+			if(hovering && style.isHasMObgColor()){
+				g.setColor(style.getMobgColor());
+			}else{
+				g.setColor(getStyle().getBgcolor());
+			}
 			g.fillRect(x, y, width, height);
-			g.setColor(getStyle().getColor());
 		}
 		
 		if(getStyle().isHasBorder()){
@@ -39,6 +42,12 @@ public class Label extends GuiElement{
 		
 		if(Variables.debug){
 			g.drawRect(x, y, width, height);
+		}
+		
+		if(hovering && style.isHasMOColor()){
+			g.setColor(style.getMoColor());
+		}else{
+			g.setColor(style.getColor());
 		}
 		
 		g.drawString(text, x + getStyle().getBorderWidth() + 2, y + (height / 2 + Variables.fmDefault.getHeight() / 2) - Variables.fmDefault.getHeight() / 5);
