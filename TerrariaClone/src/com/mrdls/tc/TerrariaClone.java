@@ -65,6 +65,6 @@ public class TerrariaClone extends Applet implements Runnable{
 	}
 	
 	public void tick(){
-		
+		StateManager.tick();
 	}
 }
