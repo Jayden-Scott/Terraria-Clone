@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import com.mrdls.tc.lib.Finals;
 import com.mrdls.tc.screen.Screen;
+import com.mrdls.tc.screen.states.StateManager;
 
 public class TerrariaClone extends Applet implements Runnable{
 
@@ -15,6 +16,8 @@ public class TerrariaClone extends Applet implements Runnable{
 	public static Screen screen;
 	
 	public static void main(String[] args){
+		StateManager.init();
+		
 		TerrariaClone tc = new TerrariaClone();
 		
 		screen = new Screen();
