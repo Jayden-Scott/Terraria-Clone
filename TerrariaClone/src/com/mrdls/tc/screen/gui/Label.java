@@ -1,5 +1,6 @@
 package com.mrdls.tc.screen.gui;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
@@ -9,6 +10,9 @@ public class Label extends GuiElement{
 	
 	private String text;
 	private Point location;
+	private Color color = Color.black;
+	private Color bgcolor = Color.white;
+	private boolean hasBackground = false;
 	
 	private void init(String text, Point location){
 		this.text = text;
@@ -16,9 +20,18 @@ public class Label extends GuiElement{
 	}
 	
 	public void render(Graphics2D g){
+		g.setColor(color);
+		
+		if(hasBackground){
+			g.setColor(bgcolor);
+			g.fillRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
+			g.setColor(color);
+		}
+		
 		if(Variables.debug){
 			g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
 		}
+		
 		g.drawString(text, (int)location.getX(), (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3));
 	}
 	
@@ -58,15 +71,45 @@ public class Label extends GuiElement{
 		return location.getX();
 	}
 	
-	public void setX(double x){
+	public Label setX(double x){
 		this.location.setLocation(x, location.getY());
+		return this;
 	}
 	
 	public double getY(){
 		return location.getY();
 	}
 	
-	public void setY(double y){
+	public Label setY(double y){
 		this.location.setLocation(location.getX(), y);
+		return this;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public Label setColor(Color color) {
+		this.color = color;
+		return this;
+	}
+
+	public Color getBgcolor() {
+		return bgcolor;
+	}
+
+	public Label setBgcolor(Color bgcolor) {
+		this.bgcolor = bgcolor;
+		setHasBackground(true);
+		return this;
+	}
+
+	public boolean isHasBackground() {
+		return hasBackground;
+	}
+
+	public Label setHasBackground(boolean hasBackground) {
+		this.hasBackground = hasBackground;
+		return this;
 	}
 }
