@@ -40,20 +40,31 @@ public class TerrariaClone extends Applet implements Runnable{
 		float lastTPS = 0;
 		float lastFPS = 0;
 		
+		float ticks = 0;
+		float frames = 0;
+		
 		float lastTick = System.nanoTime();
 		float lastFrame = System.nanoTime();
+		float lastUpdate = System.nanoTime();
 		
 		float time = System.nanoTime();
 		
 		while(true){
 			time = System.nanoTime();
 			
+			if(time - lastUpdate > 1000000000){
+				System.out.println("Ticks: " + ticks + "; Frames: " + frames);
+				ticks = 0;
+				frames = 0;
+				lastUpdate = System.nanoTime();
+			}
+			
 			if(time - lastTick >= 1000000000 / desiredTPS){
 				lastTick = System.nanoTime();
-				System.out.println("Tick");
+				ticks++;
 			}else if(time - lastFrame >= 1000000000 / desiredFPS){
 				lastFrame = System.nanoTime();
-				System.out.println("Frame");
+				frames++;
 			}
 		}
 	}
