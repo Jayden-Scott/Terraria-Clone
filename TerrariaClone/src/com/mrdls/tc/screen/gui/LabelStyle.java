@@ -90,6 +90,7 @@ public class LabelStyle {
 
 	public LabelStyle setMoColor(Color moColor) {
 		this.moColor = moColor;
+		setHasMOColor(true);
 		return this;
 	}
 
@@ -108,6 +109,7 @@ public class LabelStyle {
 
 	public LabelStyle setMobgColor(Color mobgColor) {
 		this.mobgColor = mobgColor;
+		setHasMObgColor(true);
 		return this;
 	}
 }
