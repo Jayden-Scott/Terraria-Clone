@@ -1,27 +1,24 @@
 package com.mrdls.tc;
 
 import java.applet.Applet;
-import java.awt.Color;
 import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.util.Random;
 
 import javax.swing.JFrame;
 
 import com.mrdls.tc.lib.Finals;
+import com.mrdls.tc.screen.Screen;
 
 public class TerrariaClone extends Applet implements Runnable{
 
 	private static final long serialVersionUID = 5145659858916661907L;
 
-	private BufferedImage screenImage;
+	public static Screen screen;
 	
 	public static void main(String[] args){
 		TerrariaClone tc = new TerrariaClone();
 		
-		Component applet = tc;
+		screen = new Screen();
+		Component applet = screen;
 
 	    JFrame frame = new JFrame(Finals.PROJECT_NAME);
 	    frame.getContentPane().add(applet);
@@ -33,18 +30,6 @@ public class TerrariaClone extends Applet implements Runnable{
 	    
 	    Thread threat = new Thread(tc);
 	    threat.start();
-	}
-	
-	public void update(Graphics g){
-		paint(g);
-	}
-	
-	public void paint(Graphics g){
-		if(screenImage != null){
-			g.drawImage(screenImage, 0, 0, screenImage.getWidth(), screenImage.getHeight(), null);
-		}
-		
-		
 	}
 
 	public void run() {
@@ -77,27 +62,12 @@ public class TerrariaClone extends Applet implements Runnable{
 			}else if(time - lastFrame >= 1000000000 / desiredFPS){
 				lastFrame = System.nanoTime();
 				frames++;
-				frame();
+				screen.frame();
 			}
 		}
 	}
 	
-	
 	public void tick(){
 		
-	}
-	
-	public void frame(){
-		BufferedImage si = new BufferedImage(Finals.SIZE_DEFAULT.width, Finals.SIZE_DEFAULT.height, BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g = si.createGraphics();
-		g.setColor(Color.cyan);
-		g.fillRect(0, 0, si.getWidth(), si.getHeight());
-		g.setColor(Color.black);
-		
-		g.drawString("Hello, World! " + new Random().nextInt(), 10, 20);
-		
-		g.dispose();
-		screenImage = si;
-		repaint();
 	}
 }
