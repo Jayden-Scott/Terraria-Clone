@@ -4,11 +4,14 @@ import java.awt.Color;
 
 public class LabelStyle {
 
-	private Color color = Color.black;
-	private Color bgcolor = Color.white;
+
 	private boolean hasBackground = false;
 	private boolean hasBorder = false;
+	
+	private Color color = Color.black;
+	private Color bgcolor = Color.white;
 	private Color borderColor = Color.black;
+	
 	private int borderWidth = 1;
 	
 	public Color getColor() {
