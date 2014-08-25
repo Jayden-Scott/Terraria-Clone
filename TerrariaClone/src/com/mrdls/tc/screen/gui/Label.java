@@ -17,7 +17,7 @@ public class Label extends GuiElement{
 		this.text = text;
 		this.x = location.x;
 		this.y = location.y;
-		this.setStyle(new LabelStyle());
+		this.setStyle(LabelStyles.label);
 		calcSize();
 	}
 	
@@ -41,7 +41,7 @@ public class Label extends GuiElement{
 			g.drawRect(x, y, width, height);
 		}
 		
-		g.drawString(text, x + getStyle().getBorderWidth() + 2, y + (height / 4 * 3) + getStyle().getBorderWidth());
+		g.drawString(text, x + getStyle().getBorderWidth() + 2, y + (height / 2 + Variables.fmDefault.getHeight() / 2) - Variables.fmDefault.getHeight() / 5);
 	}
 	
 	public Label(String text, Point location){
