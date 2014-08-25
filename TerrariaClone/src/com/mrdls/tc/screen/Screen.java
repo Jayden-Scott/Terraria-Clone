@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import com.mrdls.tc.lib.Finals;
+import com.mrdls.tc.lib.Variables;
 import com.mrdls.tc.screen.states.StateManager;
 
 public class Screen extends Applet{
@@ -26,7 +26,9 @@ public class Screen extends Applet{
 	}
 	
 	public void frame(){
-		BufferedImage si = new BufferedImage(Finals.SIZE_DEFAULT.width, Finals.SIZE_DEFAULT.height, BufferedImage.TYPE_INT_ARGB);
+		Variables.screenSize = Variables.frame.getSize();
+		
+		BufferedImage si = new BufferedImage(Variables.screenSize.width, Variables.screenSize.height, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = si.createGraphics();
 		g.setColor(Color.white);
 		g.fillRect(0, 0, si.getWidth(), si.getHeight());
