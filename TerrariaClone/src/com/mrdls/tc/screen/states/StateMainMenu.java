@@ -11,7 +11,8 @@ public class StateMainMenu extends ScreenState{
 	public StateMainMenu() {
 		super("Main Menu");
 		
-		addElement("label", new Label("Label", 10, 20).setStyle(LabelStyles.label));
-		addElement("success", new Button("Success", 10, 40).setStyle(LabelStyles.success));
+		addElement("label", new Label("Label", 10, 20));
+		addElement("success", new Label("Success", 10, 40).setStyle(LabelStyles.success));
+		addElement("button", new Button("Button", 10, 60));
 	}
 }
