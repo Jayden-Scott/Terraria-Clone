@@ -3,6 +3,8 @@ package com.mrdls.tc.screen.gui;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
+import com.mrdls.tc.lib.Variables;
+
 public class Label {
 	
 	private String text;
@@ -14,7 +16,8 @@ public class Label {
 	}
 	
 	public void render(Graphics2D g){
-		g.drawString(text, (int)location.getX(), (int)location.getY());
+		g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
+		g.drawString(text, (int)location.getX(), (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3));
 	}
 	
 	public Label(String text, Point location){

@@ -1,6 +1,9 @@
 package com.mrdls.tc.lib;
 
+import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
 
 import javax.swing.JFrame;
 
@@ -15,11 +18,18 @@ public class Variables {
 	public static Thread thread;
 	public static Dimension screenSize;
 	
+	public static Font fontDefault;
+	public static FontMetrics fmDefault;
+	
 	public static void init(){
 		frame = new JFrame(Finals.PROJECT_NAME);
 		screen = new Screen();
 		tc = new TerrariaClone();
 		thread = new Thread(Variables.tc);
 		screenSize = Finals.SIZE_DEFAULT;
+		
+		Canvas c = new Canvas();
+		fontDefault = new Font("Helvetica", Font.PLAIN, 12);
+		fmDefault = c.getFontMetrics(fontDefault);
 	}
 }

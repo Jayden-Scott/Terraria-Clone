@@ -33,6 +33,7 @@ public class Screen extends Applet{
 		g.setColor(Color.white);
 		g.fillRect(0, 0, si.getWidth(), si.getHeight());
 		g.setColor(Color.black);
+		g.setFont(Variables.fontDefault);
 		
 		StateManager.render(g);
 		
