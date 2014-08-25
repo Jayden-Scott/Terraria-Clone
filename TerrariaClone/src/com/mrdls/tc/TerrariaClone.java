@@ -35,12 +35,16 @@ public class TerrariaClone extends Applet implements Runnable{
 	    threat.start();
 	}
 	
+	public void update(Graphics g){
+		paint(g);
+	}
+	
 	public void paint(Graphics g){
 		if(screenImage != null){
 			g.drawImage(screenImage, 0, 0, screenImage.getWidth(), screenImage.getHeight(), null);
 		}
 		
-		g.drawString("Hello, World! " + new Random().nextInt(), 10, 20);
+		
 	}
 
 	public void run() {
@@ -88,6 +92,10 @@ public class TerrariaClone extends Applet implements Runnable{
 		Graphics2D g = si.createGraphics();
 		g.setColor(Color.cyan);
 		g.fillRect(0, 0, si.getWidth(), si.getHeight());
+		g.setColor(Color.black);
+		
+		g.drawString("Hello, World! " + new Random().nextInt(), 10, 20);
+		
 		g.dispose();
 		screenImage = si;
 		repaint();
