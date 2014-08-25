@@ -11,6 +11,6 @@ public class StateMainMenu extends ScreenState{
 	public StateMainMenu() {
 		super("Main Menu");
 		
-		addElement("testlabel", new Label("I'm Blue.", 10, 20).setColor(Color.blue).setBgcolor(Color.red));
+		addElement("testlabel", new Label("I'm Blue.", 10, 20).setColor(Color.blue).setBgcolor(Color.red).setBorderWidth(5));
 	}
 }
