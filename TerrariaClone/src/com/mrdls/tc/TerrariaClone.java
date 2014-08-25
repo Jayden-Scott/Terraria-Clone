@@ -8,12 +8,14 @@ import javax.swing.JFrame;
 
 import com.mrdls.tc.lib.Finals;
 
-public class TerrariaClone extends Applet{
+public class TerrariaClone extends Applet implements Runnable{
 
 	private static final long serialVersionUID = 5145659858916661907L;
 
 	public static void main(String[] args){
-		Component applet = new TerrariaClone();
+		TerrariaClone tc = new TerrariaClone();
+		
+		Component applet = tc;
 
 	    JFrame frame = new JFrame(Finals.PROJECT_NAME);
 	    frame.getContentPane().add(applet);
@@ -22,10 +24,17 @@ public class TerrariaClone extends Applet{
 	    frame.pack();
 	    frame.setSize(Finals.SIZE_DEFAULT);
 	    frame.setVisible(true);
+	    
+	    Thread threat = new Thread(tc);
+	    threat.start();
 	}
 	
 	public void paint(Graphics g){
 		g.drawString("Hello, World!", 10, 20);
+	}
+
+	public void run() {
+		System.out.println("Test");
 	}
 
 }
