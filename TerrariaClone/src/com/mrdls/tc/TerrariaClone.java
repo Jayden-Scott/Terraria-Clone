@@ -2,10 +2,11 @@ package com.mrdls.tc;
 
 import java.applet.Applet;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
+
+import com.mrdls.tc.lib.Finals;
 
 public class TerrariaClone extends Applet{
 
@@ -14,12 +15,12 @@ public class TerrariaClone extends Applet{
 	public static void main(String[] args){
 		Component applet = new TerrariaClone();
 
-	    JFrame frame = new JFrame("Terraria Clone");
+	    JFrame frame = new JFrame(Finals.PROJECT_NAME);
 	    frame.getContentPane().add(applet);
 
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.pack();
-	    frame.setSize(new Dimension(800, 600));
+	    frame.setSize(Finals.SIZE_DEFAULT);
 	    frame.setVisible(true);
 	}
 	
