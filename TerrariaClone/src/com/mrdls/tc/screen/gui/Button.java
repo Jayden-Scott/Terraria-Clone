@@ -4,6 +4,8 @@ import java.awt.Point;
 
 public class Button extends Label{
 
+	private static final long serialVersionUID = -304233725144918747L;
+
 	public Button(String text, Point location) {
 		super(text, location);
 	}

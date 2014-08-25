@@ -8,6 +8,8 @@ import com.mrdls.tc.lib.Variables;
 
 public class Label extends GuiElement{
 	
+	private static final long serialVersionUID = -1495365504025703688L;
+	
 	private String text;
 	private Point location;
 	private LabelStyle style;
@@ -23,14 +25,14 @@ public class Label extends GuiElement{
 		
 		if(getStyle().isHasBackground()){
 			g.setColor(getStyle().getBgcolor());
-			g.fillRect((int)location.getX(), (int)location.getY(), getWidth(), getHeight());
+			g.fillRect((int)location.getX(), (int)location.getY(), (int)getWidth(), (int)getHeight());
 			g.setColor(getStyle().getColor());
 		}
 		
 		if(getStyle().isHasBorder()){
 			g.setColor(getStyle().getBorderColor());
 			for(int i = 0; i < getStyle().getBorderWidth(); i++){
-				g.drawRect((int)location.getX() + i, (int)location.getY() + i, getWidth() - 2 * i, getHeight() - 2 * i);
+				g.drawRect((int)location.getX() + i, (int)location.getY() + i, (int)getWidth() - 2 * i, (int)getHeight() - 2 * i);
 			}
 		}
 		
@@ -57,11 +59,11 @@ public class Label extends GuiElement{
 		init(text, location);
 	}
 	
-	public int getWidth(){
+	public double getWidth(){
 		return Variables.fmDefault.stringWidth(text) + 2 * getStyle().getBorderWidth() + 4;
 	}
 	
-	public int getHeight(){
+	public double getHeight(){
 		return Variables.fmDefault.getHeight() + 2 * getStyle().getBorderWidth();
 	}
 	
