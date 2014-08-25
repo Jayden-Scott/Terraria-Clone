@@ -8,7 +8,7 @@ public class Label {
 	private String text;
 	private Point location;
 	
-	public Label(String text, Point location){
+	private void init(String text, Point location){
 		this.text = text;
 		this.location = location;
 	}
@@ -17,16 +17,20 @@ public class Label {
 		g.drawString(text, (int)location.getX(), (int)location.getY());
 	}
 	
+	public Label(String text, Point location){
+		init(text, location);
+	}
+	
 	public Label(String text){
 		Point location = new Point();
 		location.setLocation(10, 20);
-		new Label(text, location);
+		init(text, location);
 	}
 	
 	public Label(String text, double x, double y){
 		Point location = new Point();
 		location.setLocation(x, y);
-		new Label(text, location);
+		init(text, location);
 	}
 	
 	public String getText() {
