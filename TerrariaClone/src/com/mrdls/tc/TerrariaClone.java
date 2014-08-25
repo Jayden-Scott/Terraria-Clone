@@ -6,33 +6,27 @@ import java.awt.Component;
 import javax.swing.JFrame;
 
 import com.mrdls.tc.lib.Finals;
-import com.mrdls.tc.screen.Screen;
+import com.mrdls.tc.lib.Variables;
 import com.mrdls.tc.screen.states.StateManager;
 
 public class TerrariaClone extends Applet implements Runnable{
 
 	private static final long serialVersionUID = 5145659858916661907L;
-
-	public static Screen screen;
 	
 	public static void main(String[] args){
+		Variables.init();
 		StateManager.init();
 		
-		TerrariaClone tc = new TerrariaClone();
-		
-		screen = new Screen();
-		Component applet = screen;
+		Component applet = Variables.screen;
 
-	    JFrame frame = new JFrame(Finals.PROJECT_NAME);
-	    frame.getContentPane().add(applet);
+	    Variables.frame.getContentPane().add(applet);
 
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.pack();
-	    frame.setSize(Finals.SIZE_DEFAULT);
-	    frame.setVisible(true);
+	    Variables.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    Variables.frame.pack();
+	    Variables.frame.setSize(Finals.SIZE_DEFAULT);
+	    Variables.frame.setVisible(true);
 	    
-	    Thread threat = new Thread(tc);
-	    threat.start();
+	    Variables.thread.start();
 	}
 
 	public void run() {
@@ -65,7 +59,7 @@ public class TerrariaClone extends Applet implements Runnable{
 			}else if(time - lastFrame >= 1000000000 / desiredFPS){
 				lastFrame = System.nanoTime();
 				frames++;
-				screen.frame();
+				Variables.screen.frame();
 			}
 		}
 	}
