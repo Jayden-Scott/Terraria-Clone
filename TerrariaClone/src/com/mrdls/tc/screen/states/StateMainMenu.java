@@ -1,5 +1,8 @@
 package com.mrdls.tc.screen.states;
 
+import java.awt.Graphics2D;
+
+import com.mrdls.tc.lib.Variables;
 import com.mrdls.tc.screen.gui.Button;
 import com.mrdls.tc.screen.gui.Label;
 import com.mrdls.tc.screen.gui.LabelStyles;

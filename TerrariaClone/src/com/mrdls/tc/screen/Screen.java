@@ -15,6 +15,11 @@ public class Screen extends Applet{
 	
 	private BufferedImage screenImage;
 	
+	public Screen(){
+		addMouseMotionListener(Variables.mouseListener);
+		addMouseListener(Variables.mouseListener);
+	}
+	
 	public void update(Graphics g){
 		paint(g);
 	}

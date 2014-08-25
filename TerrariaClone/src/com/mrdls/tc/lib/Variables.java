@@ -4,10 +4,12 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.awt.Point;
 
 import javax.swing.JFrame;
 
 import com.mrdls.tc.TerrariaClone;
+import com.mrdls.tc.interaction.MouseListener;
 import com.mrdls.tc.screen.Screen;
 
 public class Variables {
@@ -23,7 +25,13 @@ public class Variables {
 	public static Font fontDefault;
 	public static FontMetrics fmDefault;
 	
+	public static Point cursorLocation;
+	public static MouseListener mouseListener;
+	
 	public static void init(){
+		cursorLocation = new Point(0, 0);
+		mouseListener = new MouseListener();
+		
 		frame = new JFrame(Finals.PROJECT_NAME);
 		screen = new Screen();
 		tc = new TerrariaClone();
