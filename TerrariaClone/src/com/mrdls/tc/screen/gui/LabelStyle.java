@@ -7,10 +7,14 @@ public class LabelStyle {
 
 	private boolean hasBackground = false;
 	private boolean hasBorder = false;
+	private boolean hasMOColor = false;
+	private boolean hasMObgColor = false;
 	
 	private Color color = Color.black;
 	private Color bgcolor = Color.white;
 	private Color borderColor = Color.black;
+	private Color moColor = Color.black;
+	private Color mobgColor = Color.white;
 	
 	private int borderWidth = 1;
 	
@@ -70,6 +74,40 @@ public class LabelStyle {
 		setHasBorder(true);
 		return this;
 	}
-	
-	
+
+	public boolean isHasMOColor() {
+		return hasMOColor;
+	}
+
+	public LabelStyle setHasMOColor(boolean hasMOColor) {
+		this.hasMOColor = hasMOColor;
+		return this;
+	}
+
+	public Color getMoColor() {
+		return moColor;
+	}
+
+	public LabelStyle setMoColor(Color moColor) {
+		this.moColor = moColor;
+		return this;
+	}
+
+	public boolean isHasMObgColor() {
+		return hasMObgColor;
+	}
+
+	public LabelStyle setHasMObgColor(boolean hasMObgColor) {
+		this.hasMObgColor = hasMObgColor;
+		return this;
+	}
+
+	public Color getMobgColor() {
+		return mobgColor;
+	}
+
+	public LabelStyle setMobgColor(Color mobgColor) {
+		this.mobgColor = mobgColor;
+		return this;
+	}
 }
