@@ -37,9 +37,6 @@ public class TerrariaClone extends Applet implements Runnable{
 		float desiredTPS = 30;
 		float desiredFPS = 120;
 		
-		float lastTPS = 0;
-		float lastFPS = 0;
-		
 		float ticks = 0;
 		float frames = 0;
 		
@@ -53,7 +50,7 @@ public class TerrariaClone extends Applet implements Runnable{
 			time = System.nanoTime();
 			
 			if(time - lastUpdate > 1000000000){
-				System.out.println("Ticks: " + ticks + "; Frames: " + frames);
+				System.out.println("Ticks: " + ticks + "(" + ticks / ((time - lastUpdate) / 1000000000) + "tps); Frames: " + frames + "(" + frames / ((time - lastUpdate) / 1000000000) + "fps)");
 				ticks = 0;
 				frames = 0;
 				lastUpdate = System.nanoTime();
