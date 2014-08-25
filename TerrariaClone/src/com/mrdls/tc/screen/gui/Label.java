@@ -10,30 +10,26 @@ public class Label extends GuiElement{
 	
 	private String text;
 	private Point location;
-	private Color color = Color.black;
-	private Color bgcolor = Color.white;
-	private boolean hasBackground = false;
-	private boolean hasBorder = false;
-	private Color borderColor = Color.black;
-	private int borderWidth = 1;
+	private LabelStyle style;
 	
 	private void init(String text, Point location){
 		this.text = text;
 		this.location = location;
+		this.setStyle(new LabelStyle());
 	}
 	
 	public void render(Graphics2D g){
-		g.setColor(color);
+		g.setColor(getStyle().getColor());
 		
-		if(hasBackground){
-			g.setColor(bgcolor);
+		if(getStyle().isHasBackground()){
+			g.setColor(getStyle().getBgcolor());
 			g.fillRect((int)location.getX(), (int)location.getY(), getWidth(), getHeight());
-			g.setColor(color);
+			g.setColor(getStyle().getColor());
 		}
 		
-		if(hasBorder){
-			g.setColor(borderColor);
-			for(int i = 0; i < borderWidth; i++){
+		if(getStyle().isHasBorder()){
+			g.setColor(getStyle().getBorderColor());
+			for(int i = 0; i < getStyle().getBorderWidth(); i++){
 				g.drawRect((int)location.getX() + i, (int)location.getY() + i, getWidth() - 2 * i, getHeight() - 2 * i);
 			}
 		}
@@ -42,7 +38,7 @@ public class Label extends GuiElement{
 			g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
 		}
 		
-		g.drawString(text, (int)location.getX() + borderWidth + 2, (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3) + borderWidth);
+		g.drawString(text, (int)location.getX() + getStyle().getBorderWidth() + 2, (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3) + getStyle().getBorderWidth());
 	}
 	
 	public Label(String text, Point location){
@@ -62,11 +58,11 @@ public class Label extends GuiElement{
 	}
 	
 	public int getWidth(){
-		return Variables.fmDefault.stringWidth(text) + 2 * borderWidth + 4;
+		return Variables.fmDefault.stringWidth(text) + 2 * getStyle().getBorderWidth() + 4;
 	}
 	
 	public int getHeight(){
-		return Variables.fmDefault.getHeight() + 2 * borderWidth;
+		return Variables.fmDefault.getHeight() + 2 * getStyle().getBorderWidth();
 	}
 	
 	public String getText() {
@@ -104,59 +100,68 @@ public class Label extends GuiElement{
 	}
 
 	public Color getColor() {
-		return color;
+		return getStyle().getColor();
 	}
 
 	public Label setColor(Color color) {
-		this.color = color;
+		getStyle().setColor(color);
 		return this;
 	}
 
 	public Color getBgcolor() {
-		return bgcolor;
+		return getStyle().getBgcolor();
 	}
 
 	public Label setBgcolor(Color bgcolor) {
-		this.bgcolor = bgcolor;
+		getStyle().setBgcolor(bgcolor);
 		setHasBackground(true);
 		return this;
 	}
 
 	public boolean isHasBackground() {
-		return hasBackground;
+		return getStyle().isHasBackground();
 	}
 
 	public Label setHasBackground(boolean hasBackground) {
-		this.hasBackground = hasBackground;
+		getStyle().setHasBackground(hasBackground);
 		return this;
 	}
 
 	public boolean isHasBorder() {
-		return hasBorder;
+		return getStyle().isHasBorder();
 	}
 
 	public Label setHasBorder(boolean hasBorder) {
-		this.hasBorder = hasBorder;
+		getStyle().setHasBorder(hasBorder);
 		return this;
 	}
 
 	public Color getBorderColor() {
-		return borderColor;
+		return getStyle().getBorderColor();
 	}
 
 	public Label setBorderColor(Color borderColor) {
-		this.borderColor = borderColor;
+		getStyle().setBorderColor(borderColor);
 		setHasBorder(true);
 		return this;
 	}
 
 	public int getBorderWidth() {
-		return borderWidth;
+		return getStyle().getBorderWidth();
 	}
 
 	public Label setBorderWidth(int borderWidth) {
-		this.borderWidth = borderWidth;
+		getStyle().setBorderWidth(borderWidth);
 		setHasBorder(true);
+		return this;
+	}
+
+	public LabelStyle getStyle() {
+		return style;
+	}
+
+	public Label setStyle(LabelStyle style) {
+		this.style = style;
 		return this;
 	}
 }
