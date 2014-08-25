@@ -15,7 +15,6 @@ public class StateMainMenu extends ScreenState{
 	}
 
 	public void render(Graphics2D g){
-		g.drawLine(10, 20, 100, 20);
 		testLabel.render(g);
 	}
 }

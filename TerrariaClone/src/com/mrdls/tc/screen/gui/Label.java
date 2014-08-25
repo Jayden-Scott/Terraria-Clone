@@ -16,7 +16,9 @@ public class Label {
 	}
 	
 	public void render(Graphics2D g){
-		g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
+		if(Variables.debug){
+			g.drawRect((int)location.getX(), (int)location.getY(), Variables.fmDefault.stringWidth(text), Variables.fmDefault.getHeight());
+		}
 		g.drawString(text, (int)location.getX(), (int)location.getY() + (Variables.fmDefault.getHeight() / 4 * 3));
 	}
 	
