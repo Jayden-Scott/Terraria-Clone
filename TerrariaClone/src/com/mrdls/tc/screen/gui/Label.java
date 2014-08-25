@@ -5,7 +5,7 @@ import java.awt.Point;
 
 import com.mrdls.tc.lib.Variables;
 
-public class Label {
+public class Label extends GuiElement{
 	
 	private String text;
 	private Point location;
