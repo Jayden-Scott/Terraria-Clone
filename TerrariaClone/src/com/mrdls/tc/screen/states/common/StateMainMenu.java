@@ -1,8 +1,9 @@
-package com.mrdls.tc.screen.states;
+package com.mrdls.tc.screen.states.common;
 
 import com.mrdls.tc.screen.gui.Button;
 import com.mrdls.tc.screen.gui.Label;
 import com.mrdls.tc.screen.gui.LabelStyles;
+import com.mrdls.tc.screen.states.ScreenState;
 
 public class StateMainMenu extends ScreenState{
 
