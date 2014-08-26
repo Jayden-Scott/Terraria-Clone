@@ -14,7 +14,7 @@ import com.mrdls.tc.screen.Screen;
 
 public class Variables {
 
-	public static boolean debug = false;
+	public static boolean debug = true;
 	
 	public static JFrame frame;
 	public static Screen screen;
