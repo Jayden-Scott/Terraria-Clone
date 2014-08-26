@@ -45,6 +45,10 @@ public class ButtonList extends GuiElement{
 			}
 		}
 		
+		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
+			entry.getValue().x = this.x + width / 2 - entry.getValue().width / 2;
+		}
+		
 		this.height = height;
 		this.width = width;
 	}
