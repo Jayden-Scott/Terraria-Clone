@@ -1,16 +1,14 @@
 package com.mrdls.tc.screen.states.common;
 
-import com.mrdls.tc.screen.gui.Label;
+import com.mrdls.tc.screen.gui.ButtonList;
 import com.mrdls.tc.screen.states.ScreenState;
 
 public class StateMainMenu extends ScreenState{
 
-	Label testLabel;
-	
 	public StateMainMenu() {
 		super("Main Menu");
 		
-		
+		addElement("Menu", new ButtonList().addButton("New Game").addButton("Load Game").addButton("Settings").addButton("Credits").addButton("Exit"));
 	}
 	
 	public void tick(){
