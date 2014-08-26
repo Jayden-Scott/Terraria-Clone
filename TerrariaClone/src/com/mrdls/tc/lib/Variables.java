@@ -28,6 +28,8 @@ public class Variables {
 	public static Point cursorLocation;
 	public static MouseListener mouseListener;
 	
+	public static boolean[] mouseButtons;
+	
 	public static void init(){
 		cursorLocation = new Point(0, 0);
 		mouseListener = new MouseListener();
@@ -41,5 +43,7 @@ public class Variables {
 		Canvas c = new Canvas();
 		fontDefault = new Font("Helvetica", Font.PLAIN, 12);
 		fmDefault = c.getFontMetrics(fontDefault);
+		
+		mouseButtons = new boolean[3];
 	}
 }
