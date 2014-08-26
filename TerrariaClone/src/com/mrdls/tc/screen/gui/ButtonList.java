@@ -27,6 +27,12 @@ public class ButtonList extends GuiElement{
 		
 	}
 	
+	public void tick(){
+		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
+			entry.getValue().tick();
+		}
+	}
+	
 	public void render(Graphics2D g){
 		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
 			entry.getValue().render(g);
