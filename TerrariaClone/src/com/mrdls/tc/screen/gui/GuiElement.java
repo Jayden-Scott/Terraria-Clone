@@ -29,4 +29,12 @@ public class GuiElement extends Rectangle{
 			clicked = false;
 		}
 	}
+	
+	public boolean isMouseOver(){
+		return mouseOver;
+	}
+	
+	public boolean isClicked(){
+		return clicked;
+	}
 }
