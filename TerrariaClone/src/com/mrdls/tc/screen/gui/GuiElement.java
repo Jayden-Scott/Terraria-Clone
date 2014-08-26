@@ -9,17 +9,24 @@ public class GuiElement extends Rectangle{
 
 	private static final long serialVersionUID = -1279649973681948056L;
 	
-	protected boolean hovering = false;
+	protected boolean mouseOver = false;
+	protected boolean clicked = false;
 	
 	public void render(Graphics2D g){}
 	public void tick(){
 		if(this.contains(Variables.cursorLocation)){
-			hovering = true;
+			mouseOver = true;
 			if(Variables.debug){
 				System.out.println("TOUCH ME!");
 			}
+			
+			if(Variables.mouseButtons[0]){
+				clicked = true;
+			}
+			
 		}else{
-			hovering = false;
+			mouseOver = false;
+			clicked = false;
 		}
 	}
 }

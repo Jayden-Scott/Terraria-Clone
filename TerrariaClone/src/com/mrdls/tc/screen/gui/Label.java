@@ -24,8 +24,8 @@ public class Label extends GuiElement{
 	public void render(Graphics2D g){
 		g.setColor(getStyle().getColor());
 		
-		if(getStyle().isHasBackground() || (hovering && style.isHasMObgColor())){
-			if(hovering && style.isHasMObgColor()){
+		if(getStyle().isHasBackground() || (mouseOver && style.isHasMObgColor())){
+			if(mouseOver && style.isHasMObgColor()){
 				g.setColor(style.getMobgColor());
 			}else{
 				g.setColor(getStyle().getBgcolor());
@@ -44,7 +44,7 @@ public class Label extends GuiElement{
 			g.drawRect(x, y, width, height);
 		}
 		
-		if(hovering && style.isHasMOColor()){
+		if(mouseOver && style.isHasMOColor()){
 			g.setColor(style.getMoColor());
 		}else{
 			g.setColor(style.getColor());
