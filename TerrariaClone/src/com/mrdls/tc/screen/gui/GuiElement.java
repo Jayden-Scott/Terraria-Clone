@@ -12,7 +12,11 @@ public class GuiElement extends Rectangle{
 	protected boolean mouseOver = false;
 	protected boolean clicked = false;
 	
+	protected ElementStyle style = ElementStyles.label;
+	
+	public void calcSize() {}
 	public void render(Graphics2D g){}
+	
 	public void tick(){
 		if(this.contains(Variables.cursorLocation)){
 			mouseOver = true;

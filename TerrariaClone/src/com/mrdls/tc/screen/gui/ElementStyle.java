@@ -2,7 +2,7 @@ package com.mrdls.tc.screen.gui;
 
 import java.awt.Color;
 
-public class LabelStyle {
+public class ElementStyle {
 
 
 	private boolean hasBackground = false;
@@ -22,7 +22,7 @@ public class LabelStyle {
 		return color;
 	}
 	
-	public LabelStyle setColor(Color color) {
+	public ElementStyle setColor(Color color) {
 		this.color = color;
 		return this;
 	}
@@ -31,7 +31,7 @@ public class LabelStyle {
 		return bgcolor;
 	}
 	
-	public LabelStyle setBgcolor(Color bgcolor) {
+	public ElementStyle setBgcolor(Color bgcolor) {
 		this.bgcolor = bgcolor;
 		setHasBackground(true);
 		return this;
@@ -41,7 +41,7 @@ public class LabelStyle {
 		return hasBackground;
 	}
 	
-	public LabelStyle setHasBackground(boolean hasBackground) {
+	public ElementStyle setHasBackground(boolean hasBackground) {
 		this.hasBackground = hasBackground;
 		return this;
 	}
@@ -50,7 +50,7 @@ public class LabelStyle {
 		return hasBorder;
 	}
 	
-	public LabelStyle setHasBorder(boolean hasBorder) {
+	public ElementStyle setHasBorder(boolean hasBorder) {
 		this.hasBorder = hasBorder;
 		return this;
 	}
@@ -59,7 +59,7 @@ public class LabelStyle {
 		return borderColor;
 	}
 	
-	public LabelStyle setBorderColor(Color borderColor) {
+	public ElementStyle setBorderColor(Color borderColor) {
 		this.borderColor = borderColor;
 		setHasBorder(true);
 		return this;
@@ -69,7 +69,7 @@ public class LabelStyle {
 		return borderWidth;
 	}
 	
-	public LabelStyle setBorderWidth(int borderWidth) {
+	public ElementStyle setBorderWidth(int borderWidth) {
 		this.borderWidth = borderWidth;
 		setHasBorder(true);
 		return this;
@@ -79,7 +79,7 @@ public class LabelStyle {
 		return hasMOColor;
 	}
 
-	public LabelStyle setHasMOColor(boolean hasMOColor) {
+	public ElementStyle setHasMOColor(boolean hasMOColor) {
 		this.hasMOColor = hasMOColor;
 		return this;
 	}
@@ -88,7 +88,7 @@ public class LabelStyle {
 		return moColor;
 	}
 
-	public LabelStyle setMoColor(Color moColor) {
+	public ElementStyle setMoColor(Color moColor) {
 		this.moColor = moColor;
 		setHasMOColor(true);
 		return this;
@@ -98,7 +98,7 @@ public class LabelStyle {
 		return hasMObgColor;
 	}
 
-	public LabelStyle setHasMObgColor(boolean hasMObgColor) {
+	public ElementStyle setHasMObgColor(boolean hasMObgColor) {
 		this.hasMObgColor = hasMObgColor;
 		return this;
 	}
@@ -107,7 +107,7 @@ public class LabelStyle {
 		return mobgColor;
 	}
 
-	public LabelStyle setMobgColor(Color mobgColor) {
+	public ElementStyle setMobgColor(Color mobgColor) {
 		this.mobgColor = mobgColor;
 		setHasMObgColor(true);
 		return this;

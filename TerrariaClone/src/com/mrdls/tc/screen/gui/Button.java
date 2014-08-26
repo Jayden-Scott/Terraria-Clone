@@ -7,7 +7,7 @@ public class Button extends Label{
 	private static final long serialVersionUID = -304233725144918747L;
 	
 	public void init(){
-		this.setStyle(LabelStyles.button);
+		this.setStyle(ElementStyles.button);
 	}
 
 	public Button(String text, Point location) {

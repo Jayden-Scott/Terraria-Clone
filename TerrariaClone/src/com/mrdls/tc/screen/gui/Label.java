@@ -11,13 +11,13 @@ public class Label extends GuiElement{
 	private static final long serialVersionUID = -1495365504025703688L;
 	
 	private String text;
-	private LabelStyle style;
+	private ElementStyle style;
 	
 	private void init(String text, Point location){
 		this.text = text;
 		this.x = location.x;
 		this.y = location.y;
-		this.setStyle(LabelStyles.label);
+		this.setStyle(ElementStyles.label);
 		calcSize();
 	}
 	
@@ -147,11 +147,11 @@ public class Label extends GuiElement{
 		return this;
 	}
 
-	public LabelStyle getStyle() {
+	public ElementStyle getStyle() {
 		return style;
 	}
 
-	public Label setStyle(LabelStyle style) {
+	public Label setStyle(ElementStyle style) {
 		this.style = style;
 		calcSize();
 		return this;
