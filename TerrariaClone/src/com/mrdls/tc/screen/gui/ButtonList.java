@@ -4,6 +4,8 @@ import java.awt.Graphics2D;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.mrdls.tc.lib.Variables;
+
 public class ButtonList extends GuiElement{
 
 	private static final long serialVersionUID = -3680355213806734154L;
@@ -34,6 +36,10 @@ public class ButtonList extends GuiElement{
 	}
 	
 	public void render(Graphics2D g){
+		if(Variables.debug){
+			g.drawRect(x, y, width, height);
+		}
+		
 		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
 			entry.getValue().render(g);
 		}
