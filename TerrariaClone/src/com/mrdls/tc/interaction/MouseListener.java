@@ -9,13 +9,13 @@ public class MouseListener implements java.awt.event.MouseListener, MouseMotionL
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(e.getButton() == MouseEvent.BUTTON1){
+		/*if(e.getButton() == MouseEvent.BUTTON1){
 			Variables.mouseButtons[0] = true;
 		}else if(e.getButton() == MouseEvent.BUTTON2){
 			Variables.mouseButtons[1] = true;
 		}else if(e.getButton() == MouseEvent.BUTTON3){
 			Variables.mouseButtons[2] = true;
-		}
+		}*/
 	}
 
 	@Override
