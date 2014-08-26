@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class StateManager {
 
-	public static Map<String, ScreenState> map;
-	public static String currentState;
+	private static Map<String, ScreenState> map;
+	private static String currentState;
 	
 	public static void init(){
 		map = new HashMap<String, ScreenState>();
