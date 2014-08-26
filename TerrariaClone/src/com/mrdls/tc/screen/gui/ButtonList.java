@@ -13,6 +13,7 @@ public class ButtonList extends GuiElement{
 	private Map<String, Button> buttonList;
 	
 	private int buttonAmount = 0;
+	private int buttonMargin = 10;
 	
 	public ButtonList(){
 		buttonList = new HashMap<String, Button>();
@@ -21,12 +22,27 @@ public class ButtonList extends GuiElement{
 	public ButtonList addButton(String name){
 		buttonList.put(name, new Button(name).setPosition(10, 10 + buttonAmount * 30));
 		buttonAmount++;
+		calcSize();
 		return this;
-		
 	}
 	
 	public void calcSize(){
+		int height = 0;
+		int width = 0;
 		
+		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
+			if(height != 0){
+				height += buttonMargin;
+			}
+			height += entry.getValue().height;
+			
+			if(entry.getValue().width > width){
+				width = entry.getValue().width;
+			}
+		}
+		
+		this.height = height;
+		this.width = width;
 	}
 	
 	public void tick(){
