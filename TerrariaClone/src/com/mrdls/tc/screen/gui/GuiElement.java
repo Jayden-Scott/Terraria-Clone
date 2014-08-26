@@ -22,6 +22,8 @@ public class GuiElement extends Rectangle{
 			
 			if(Variables.mouseButtons[0]){
 				clicked = true;
+			}else{
+				clicked = false;
 			}
 			
 		}else{
