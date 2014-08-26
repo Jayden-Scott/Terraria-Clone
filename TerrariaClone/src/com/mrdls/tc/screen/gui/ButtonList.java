@@ -20,7 +20,11 @@ public class ButtonList extends GuiElement{
 	}
 	
 	public ButtonList addButton(String name){
-		buttonList.put(name, new Button(name).setPosition(10, 10 + buttonAmount * 30));
+		int y = this.y + height;
+		if(height != 0){
+			y += buttonMargin;
+		}
+		buttonList.put(name, new Button(name).setPosition(x, y));
 		buttonAmount++;
 		calcSize();
 		return this;
