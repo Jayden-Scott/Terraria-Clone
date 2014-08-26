@@ -4,6 +4,7 @@ import com.mrdls.tc.screen.gui.Button;
 import com.mrdls.tc.screen.gui.Label;
 import com.mrdls.tc.screen.gui.LabelStyles;
 import com.mrdls.tc.screen.states.ScreenState;
+import com.mrdls.tc.screen.states.StateManager;
 
 public class StateMainMenu extends ScreenState{
 
@@ -21,7 +22,7 @@ public class StateMainMenu extends ScreenState{
 		super.tick();
 		
 		if(getElement("button").isClicked()){
-			System.out.println("CLICKED");
+			StateManager.setState("Credits");
 		}
 	}
 }
