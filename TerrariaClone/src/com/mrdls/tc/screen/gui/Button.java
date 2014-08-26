@@ -24,4 +24,9 @@ public class Button extends Label{
 		super(text, x, y);
 		init();
 	}
+	
+	public Button setPosition(int x, int y){
+		super.setPosition(x, y);
+		return this;
+	}
 }

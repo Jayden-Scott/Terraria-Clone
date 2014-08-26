@@ -43,4 +43,10 @@ public class GuiElement extends Rectangle{
 	public boolean isClicked(){
 		return clicked;
 	}
+	
+	public GuiElement setPosition(int x, int y){
+		this.x = x;
+		this.y = y;
+		return this;
+	}
 }
