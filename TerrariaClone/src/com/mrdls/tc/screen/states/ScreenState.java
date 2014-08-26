@@ -27,9 +27,14 @@ public class ScreenState {
 			entry.getValue().render(g);
 		}
 	}
+	
 	public void tick(){
 		for(Map.Entry<String, GuiElement> entry : map.entrySet()){
 			entry.getValue().tick();
 		}
+	}
+	
+	public GuiElement getElement(String name){
+		return map.get(name);
 	}
 }
