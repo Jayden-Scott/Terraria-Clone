@@ -13,6 +13,9 @@ public class StateMainMenu extends ScreenState{
 	
 	public void tick(){
 		super.tick();
-		
+	}
+	
+	public void sizeChanged(){
+		System.out.println("Size Changed!");
 	}
 }
