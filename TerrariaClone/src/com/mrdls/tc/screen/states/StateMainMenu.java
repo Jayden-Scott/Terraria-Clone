@@ -15,4 +15,12 @@ public class StateMainMenu extends ScreenState{
 		addElement("success", new Label("Success", 10, 40).setStyle(LabelStyles.success));
 		addElement("button", new Button("Button", 10, 60));
 	}
+	
+	public void tick(){
+		super.tick();
+		
+		if(getElement("button").isClicked()){
+			System.out.println("CLICKED");
+		}
+	}
 }
