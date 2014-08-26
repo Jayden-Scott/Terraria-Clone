@@ -10,12 +10,16 @@ public class ButtonList extends GuiElement{
 
 	private Map<String, Button> buttonList;
 	
+	private int buttonAmount = 0;
+	
 	public ButtonList(){
 		buttonList = new HashMap<String, Button>();
 	}
 	
-	public void addButton(String name, Button button){
-		buttonList.put(name, button);
+	public ButtonList addButton(String name){
+		buttonList.put(name, new Button(name).setPosition(10, 10 + buttonAmount * 30));
+		buttonAmount++;
+		return this;
 		
 	}
 	
@@ -24,6 +28,12 @@ public class ButtonList extends GuiElement{
 	}
 	
 	public void render(Graphics2D g){
-		
+		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
+			entry.getValue().render(g);
+		}
+	}
+	
+	public int getButtonAmount(){
+		return buttonAmount;
 	}
 }
