@@ -15,7 +15,9 @@ public class GuiElement extends Rectangle{
 	public void tick(){
 		if(this.contains(Variables.cursorLocation)){
 			hovering = true;
-			System.out.println("TOUCH ME!");
+			if(Variables.debug){
+				System.out.println("TOUCH ME!");
+			}
 		}else{
 			hovering = false;
 		}
