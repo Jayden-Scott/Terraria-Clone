@@ -1,5 +1,6 @@
 package com.mrdls.tc.screen.states.common;
 
+import com.mrdls.tc.lib.Variables;
 import com.mrdls.tc.screen.gui.ButtonList;
 import com.mrdls.tc.screen.states.ScreenState;
 
@@ -9,6 +10,8 @@ public class StateMainMenu extends ScreenState{
 		super("Main Menu");
 		
 		addElement("Menu", new ButtonList().addButton("New Game").addButton("Load Game").addButton("Settings").addButton("Credits").addButton("Exit"));
+		
+		sizeChanged();
 	}
 	
 	public void tick(){
@@ -16,6 +19,7 @@ public class StateMainMenu extends ScreenState{
 	}
 	
 	public void sizeChanged(){
-		System.out.println("Size Changed!");
+		getElement("Menu").x = Variables.screenSize.width / 2 - getElement("Menu").width /2;
+		getElement("Menu").y = Variables.screenSize.height / 2 - getElement("Menu").height /2;
 	}
 }
