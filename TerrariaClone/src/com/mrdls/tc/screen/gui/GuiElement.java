@@ -17,6 +17,12 @@ public class GuiElement extends Rectangle{
 	public void calcSize() {}
 	public void render(Graphics2D g){}
 	
+	public void render(Graphics2D g, int x, int y) {
+		this.x = x;
+		this.y = y;
+		render(g);
+	}
+	
 	public void tick(){
 		if(this.contains(Variables.cursorLocation)){
 			mouseOver = true;
