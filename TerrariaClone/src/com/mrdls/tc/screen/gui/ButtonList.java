@@ -1,7 +1,7 @@
 package com.mrdls.tc.screen.gui;
 
 import java.awt.Graphics2D;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.mrdls.tc.lib.Variables;
@@ -16,7 +16,7 @@ public class ButtonList extends GuiElement{
 	private int buttonMargin = 10;
 	
 	public ButtonList(){
-		buttonList = new HashMap<String, Button>();
+		buttonList = new LinkedHashMap<String, Button>();
 	}
 	
 	public ButtonList addButton(String name){
@@ -64,8 +64,12 @@ public class ButtonList extends GuiElement{
 			g.drawRect(x, y, width, height);
 		}
 		
+		int buttonCounter = 0;
 		for(Map.Entry<String, Button> entry : buttonList.entrySet()){
-			entry.getValue().render(g);
+			int x = this.x + width / 2 - entry.getValue().width / 2;
+			int y = this.y + buttonCounter * (entry.getValue().height + buttonMargin);
+			entry.getValue().render(g, x, y);
+			buttonCounter++;
 		}
 	}
 	
