@@ -16,6 +16,12 @@ public class StateMainMenu extends ScreenState{
 	
 	public void tick(){
 		super.tick();
+		
+		ButtonList menu = (ButtonList)getElement("Menu");
+		
+		if(menu.getButton("Exit").isClicked()){
+			System.exit(0);
+		}
 	}
 	
 	public void sizeChanged(){
