@@ -76,4 +76,8 @@ public class ButtonList extends GuiElement{
 	public int getButtonAmount(){
 		return buttonAmount;
 	}
+	
+	public Button getButton(String name){
+		return buttonList.get(name);
+	}
 }
