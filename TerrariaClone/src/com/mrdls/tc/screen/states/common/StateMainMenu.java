@@ -3,6 +3,7 @@ package com.mrdls.tc.screen.states.common;
 import com.mrdls.tc.lib.Variables;
 import com.mrdls.tc.screen.gui.ButtonList;
 import com.mrdls.tc.screen.states.ScreenState;
+import com.mrdls.tc.screen.states.StateManager;
 
 public class StateMainMenu extends ScreenState{
 
@@ -18,6 +19,10 @@ public class StateMainMenu extends ScreenState{
 		super.tick();
 		
 		ButtonList menu = (ButtonList)getElement("Menu");
+		
+		if(menu.getButton("Credits").isClicked()){
+			StateManager.setState("Credits");
+		}
 		
 		if(menu.getButton("Exit").isClicked()){
 			System.exit(0);
