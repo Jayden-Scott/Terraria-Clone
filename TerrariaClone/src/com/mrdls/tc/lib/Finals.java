@@ -6,6 +6,8 @@ public class Finals {
 	
 	public static final String PROJECT_NAME = "Terraria Clone";
 	
+	public static final double PROJECT_VERSION = 0.0;
+	
 	public static final int DEFAULT_TPS = 30;
 	public static final int DEFAULT_FPS = 120;
 	
