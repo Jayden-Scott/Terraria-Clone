@@ -9,6 +9,8 @@ public class ElementStyle {
 	private boolean hasBorder = false;
 	private boolean hasMOColor = false;
 	private boolean hasMObgColor = false;
+	private boolean autoSize = true;
+	private boolean isMultiLine = false;
 	
 	private Color color = Color.black;
 	private Color bgcolor = Color.white;
@@ -110,6 +112,27 @@ public class ElementStyle {
 	public ElementStyle setMobgColor(Color mobgColor) {
 		this.mobgColor = mobgColor;
 		setHasMObgColor(true);
+		return this;
+	}
+
+	public boolean isAutoSize() {
+		return autoSize;
+	}
+
+	public ElementStyle setAutoSize(boolean autoSize) {
+		this.autoSize = autoSize;
+		return this;
+	}
+
+	public boolean isMultiLine() {
+		return isMultiLine;
+	}
+
+	public ElementStyle setMultiLine(boolean isMultiLine) {
+		this.isMultiLine = isMultiLine;
+		if(isMultiLine){
+			setAutoSize(true);
+		}
 		return this;
 	}
 }
