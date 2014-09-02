@@ -31,7 +31,7 @@ public class Screen extends Applet{
 	}
 	
 	public void frame(){
-		Variables.screenSize = Variables.frame.getSize();
+		Variables.screenSize = this.getSize();
 		
 		BufferedImage si = new BufferedImage(Variables.screenSize.width, Variables.screenSize.height, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = si.createGraphics();
