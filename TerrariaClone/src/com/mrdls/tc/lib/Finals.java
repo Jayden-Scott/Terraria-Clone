@@ -9,7 +9,7 @@ public class Finals {
 	public static final double PROJECT_VERSION = 0.0;
 	
 	public static final int DEFAULT_TPS = 30;
-	public static final int DEFAULT_FPS = 120;
+	public static final int DEFAULT_FPS = 60;
 	
 	public static final Dimension SIZE_DEFAULT = new Dimension(800, 600);
 	
